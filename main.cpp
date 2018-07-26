@@ -118,6 +118,10 @@ public:
 
 	};
 
+	void reset_hp(int ship_id) {
+		fleet[ship_id].hp = 2;
+	}
+
 	bool hp_change_ship(int ship_id , bool op) { //op=true zwieksz hp op=false zmniejsz hp
 
 		if(op == true)
@@ -569,7 +573,7 @@ private:
 				};
 
 			if (PC_player == true || wyb == 97) {
-
+				ship.reset_hp(ship_index);
 				int buf_ships_count;
 				for (int i = 0; i < 4; i++) { // Pobranie typu danego statku
 					buf_ships_count = ships_count[i];
